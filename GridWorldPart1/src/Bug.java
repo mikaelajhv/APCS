@@ -33,7 +33,7 @@ public class Bug extends Actor
      */
     public Bug()
     {
-        setColor(Color.RED);
+        setColor(Color.CYAN);
     }
 
     /**
@@ -50,12 +50,22 @@ public class Bug extends Actor
      */
     public void act()
     {
-        if (canMove())
+    	Color purple = new Color(218, 112, 214);
+   
+		if (canMove())
+		{
+			this.setColor(Color.CYAN);
             move();
+		}
+		
         else
+        {
+        	this.setColor(purple);
             turn();
+        }
     }
 
+    
     /**
      * Turns the bug 45 degrees to the right without changing its location.
      */
@@ -64,6 +74,7 @@ public class Bug extends Actor
         setDirection(getDirection() + Location.RIGHT);
     }
 
+    
     /**
      * Moves the bug forward, putting a flower into the location it previously
      * occupied.
