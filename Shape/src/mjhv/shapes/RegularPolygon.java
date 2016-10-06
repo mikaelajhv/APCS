@@ -82,6 +82,8 @@ public class RegularPolygon extends Shape{
 	{
 		super.draw(drawer);
 		
+		drawer.ellipse((float)x, (float)y, (float)bigR, (float)bigR);
+		drawer.ellipse((float)x, (float)y, (float)smallR, (float)smallR);
 		
 	}
 	

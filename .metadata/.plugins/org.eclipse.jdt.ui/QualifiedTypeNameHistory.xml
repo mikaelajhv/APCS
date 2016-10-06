@@ -14,8 +14,8 @@
 <fullyQualifiedTypeName name="mjhv.shapes.Rectangle"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="mjhv.rectangleTesters.Shapes"/>
-<fullyQualifiedTypeName name="processing.core.PApplet"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="mjhv.shapes.Line"/>
 <fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
+<fullyQualifiedTypeName name="processing.core.PApplet"/>
 </qualifiedTypeNameHistroy>
