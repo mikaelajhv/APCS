@@ -1,0 +1,43 @@
+
+public class Line {
+	
+	
+	private double xStart, yStart, xEnd, yEnd, slope;
+	
+	// Constructs a line from (x1, y1) to (x2, y2)
+	public Line(double x1, double y1, double x2, double y2)
+	{
+		xStart = x1;
+		yStart = y1;
+		xEnd = x2;
+		yEnd = y2;
+		
+		slope = (yEnd - yStart) / (xEnd - xStart);
+		
+	}
+	
+	
+
+	// Sets this line’s second point (x2, y2) to a new coordinate
+	public void setPoint2(double x2, double y2)
+	{
+		xEnd = x2;
+		yEnd = y2;
+	}
+
+	// Draws this line using the PApplet passed as an argument
+	public void draw(DrawingSurface drawer)
+	{
+		drawer.line((float)xStart, (float)yStart,(float) xEnd, (float)yEnd);
+	}
+
+	// Returns true if this line segment and the segment other intersect each other. Returns false if they do not intersect.
+	public boolean intersects(Line other)
+	{
+		
+		
+		
+		return false;
+	}
+
+}

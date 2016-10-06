@@ -1,0 +1,136 @@
+package mjhv.shapes;
+
+public class Sphere {
+
+	private double x, y, z, radius;
+	
+	//Constructors
+	/**
+	 * This constructor creates a default instance of a Sphere
+	 * and sets all dimensions to zero
+	 */
+	public Sphere()
+	{
+		x = 0;
+		y = 0;
+		z = 0;
+		radius = 0;
+	}
+	
+	/**
+	 * This constructor creates a new instance of a Sphere
+	 * with x, y, and z coordinates and a radius
+	 * 
+	 * @param x x-coordinate of the sphere's center
+	 * @param y y-coordinate of the sphere's center
+	 * @param z z-coordinate of the sphere's center
+	 * @param radius length of the sphere's radius
+	 */
+	public Sphere(double x, double y, double z, double radius)
+	{
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.radius = radius;
+	}
+	
+	/**
+	 * This constructor creates a new instance of a Sphere
+	 * with a radius
+	 * 
+	 * @param radius length of sphere's radius
+	 */
+	public Sphere(double radius)
+	{
+		this.radius = radius;
+	}
+	
+	//Methods
+	/**
+	 * This method moves the sphere to the x, y, and z coordinates 
+	 * that are passed in. These coordinates must be positive
+	 * 
+	 * @param x x-coordinate of new point
+	 * @param y y-coordinate of new point
+	 */
+	public void move(double x, double y)
+	{
+		this.x = x;
+		this.y = y;
+	}
+	
+	/**
+	 * This method calculates the surface area of the sphere 
+	 * object
+	 * 
+	 * @return double of calculated surface area
+	 */
+	public double calcSurfaceArea()
+	{
+		double surfaceArea = 4*Math.PI*(Math.pow(this.radius, 2));
+		return surfaceArea;
+	}
+	
+	/**
+	 * This method calculates the volume of the sphere 
+	 * 
+	 * @return double of calculated volume
+	 */
+	public double calcVolume()
+	{
+		double volume = (4/3)*Math.PI*(Math.pow(this.radius, 3));
+		return volume;
+	}
+	
+	/**
+	 * This method tests to see if a point is inside the sphere object
+	 * and returns true if it is and false if the specified point is 
+	 * not within the sphere 
+	 * 
+	 * @param x x-coordinate of point
+	 * @param y y-coordinate of point
+	 * @return true if point is inside sphere and false if not in sphere
+	 */
+	public boolean isPointInSphere(double x, double y)
+	{
+		double xEdge = this.x + (2 * this.radius);
+		double yEdge = this.y + (2 * this.radius);
+		
+		if(x >= this.x && x <= xEdge && y >= this.y && y <= yEdge)
+		{
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+		
+	}
+	
+	/**
+	 * This method increases or decreases the radius of the sphere 
+	 * by a growth factor 
+	 * 
+	 * @param factor the double amount the sphere's radius will increase or decrease by
+	 */
+	public void grow(double factor)
+	{
+		this.radius += factor;
+	}
+	
+	/**
+	 * This method draws a new instance of a Sphere object 
+	 * 
+	 * @param drawer DrawSurface used to draw the sphere
+	 * @pre drawer must not be null and appropriate settings should have been selected 
+	 */
+	public void draw(mjhv.sphereTesters.DrawSurface drawer) 
+	{
+		
+		drawer.sphereDetail(30);
+		drawer.translate((float)this.x, (float)this.y, (float)this.z);
+		drawer.sphere((float)this.radius); 
+	
+	}
+	
+}

@@ -1,0 +1,58 @@
+package mjhv.shapes
+import mjhv.rectangleTesters.Shapes;
+import mjhv.shapes.Circle;
+import mjhv.shapes.Line;
+
+public class RegularPolygon extends Shapes{
+	
+	//some fields to think about:
+	 private int numSides; //number of sides
+	 private double sideLength; //length of side
+	 private Circle outsideCirc, insideCirc; //circumscribed/inscribe circles
+	 private Line[] sides; //array of line objects for each side
+	 
+	public RegularPolygon()
+	{
+		super(0, 0);
+	}
+	
+	public RegularPolygon(double x, double y, int numSides, double sideLength)
+	{
+		super(x, y);
+		this.numSides = numSides;
+		this.sideLength = sideLength;
+	}
+	
+	/**
+	 * This method calculates the vertex angle of the regular polygon
+	 * 
+	 * @return
+	 */
+	public double calcVertexAngle()
+	{
+		
+	}
+	
+	public double calcPerimeter()
+	{
+		
+	}
+	
+	public double calcArea()
+	{
+		
+	}
+	
+	public int getNumSides()
+	{
+		
+	}
+	
+	public double getSideLength()
+	{
+		
+	}
+	
+	public
+
+}

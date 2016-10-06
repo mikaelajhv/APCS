@@ -1,0 +1,64 @@
+package mjhv.shapes;
+import mjhv.rectangleTesters.Shapes;
+import mjhv.shapes.Circle;
+import mjhv.shapes.Line;
+
+/**
+ * This class models a pentagon, a regular pentagon
+ * 
+ * @author mvalenciano825
+ * @version 9/29/2016
+ */
+public class RegularPolygon extends Shapes{
+	
+	//some fields to think about:
+	 private int numSides; //number of sides
+	 private double sideLength; //length of side
+	 private Circle outsideCirc, insideCirc; //circumscribed/inscribe circles
+	 private Line[] sides; //array of line objects for each side
+	 
+	public RegularPolygon()
+	{
+		super(0, 0);
+	}
+	
+	public RegularPolygon(double x, double y, int numSides, double sideLength)
+	{
+		super(x, y);
+		this.numSides = numSides;
+		this.sideLength = sideLength;
+	}
+	
+	/**
+	 * This method calculates the vertex angle of the regular polygon
+	 * 
+	 * @return
+	 */
+	public double calcVertexAngle()
+	{
+		return 0;
+	}
+	
+	public double calcPerimeter()
+	{
+		return 0;
+	}
+	
+	public double calcArea()
+	{
+		return 0;
+	}
+	
+	public int getNumSides()
+	{
+		return 0;
+	}
+	
+	public double getSideLength()
+	{
+		return 0;	
+	}
+	
+	
+
+}

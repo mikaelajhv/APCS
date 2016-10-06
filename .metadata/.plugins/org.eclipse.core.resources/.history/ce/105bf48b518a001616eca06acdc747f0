@@ -1,0 +1,106 @@
+package mjhv.shapes;
+
+import mjhv.rectangleTesters.Shapes;
+import processing.core.PApplet;
+
+/**
+ * This class represents a double precision Rectangle 
+ * 
+ * @author mvalenciano825
+ * @version 9/15/2016
+ */
+public class Rectangle extends Shapes{
+
+	private float width, height; 
+	
+	//Constructors
+	
+	/** Creates a new instance of a Rectangle object with the left and right
+	 * edges of the rectangle at x and x + width. The top and bottom edges
+	 * are at y and y + height.
+	 * 
+	*/ 
+	
+	public Rectangle()
+	{
+		super(0,0);
+	}
+	
+	public Rectangle(double x, double y, double width, double height)
+	{
+		super(x, y);
+		this.width = (float)width;
+		this.height = (float)height;
+	}
+	
+	
+	//Methods 
+	/** Calculates and returns the perimeter of the rectangle
+	 * 
+	 * @return rectangle's perimeter
+	 */
+	public double calcPerimeter()
+	{
+		double perimeter = (this.width * 2) + (this.height * 2);
+		return perimeter;
+	}
+	
+	/**
+	 * This method calculates and returns the rectangle's area
+	 * 
+	 * @return rectangle's area
+	 */
+	// Calculates and returns the area of the rectangle
+	public double calcArea()
+	{
+		double area = this.width * this.height;
+		return area;
+	}
+	
+	/** Draws a new instance of a Rectangle object with 
+	 * the left and right edges of the rectangle at x and x + width. The top and bottom edges
+	 * are at y and y + height. 
+	 * 
+	 * @param marker PApplet to be used in order to draw the rectangle 
+	 */
+	public void draw (PApplet marker)
+	{
+		super.draw(marker);
+		//marker.rectMode(PApplet.CORNER); <-- makes sure rectangle draws from the corner!
+		marker.rect((float)x, (float)y, (float)width, (float)height);
+	}
+	
+	/**
+	 * This method checks to see if the rectangle object is also a square
+	 * 
+	 * @return true if boolean if rectangle is also a square or false if rectangle is not also a square 
+	 */
+	public boolean isSquare()
+	{
+		if(this.height == this.width)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * This method returns the length of the rectangle's diagonal
+	 * 
+	 * @return the integer length of the diagonal
+	 */
+	public double diagLength()
+	{
+		double aSq = Math.pow(this.height, 2);
+		double bSq = Math.pow(this.width, 2);
+		double hypotenuse = Math.sqrt(aSq + bSq);
+		
+		return hypotenuse;
+	} 
+	
+	
+	
+}

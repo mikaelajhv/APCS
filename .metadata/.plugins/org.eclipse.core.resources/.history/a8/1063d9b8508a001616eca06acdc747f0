@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+
+import mjhv.shapes.Line;
+import processing.core.PApplet;
+
+
+public class DrawSurface extends PApplet{
+	
+	private ArrayList<Line> lines;
+	private Line blue1, blue2;
+	
+	public DrawSurface()
+	{
+		super();
+		lines.add(new Line(1, 200, 499, 150));
+		lines.add(new Line(1, 205, 499, 165));
+		lines.add(new Line(1, 210, 499, 180));
+		lines.add(new Line(1, 215, 499, 195));
+		lines.add(new Line(1, 220, 499, 210));
+		lines.add(new Line(1, 225, 499, 225));
+		lines.add(new Line(1, 230, 499, 240));
+		lines.add(new Line(1, 235, 499, 255));
+		lines.add(new Line(1, 240, 499, 270));
+		lines.add(new Line(1, 245, 499, 285));
+		
+		blue1 = new Line(195, 190, 195, 255);
+		blue2 = new Line(255, 190, 255, 255);
+		
+		runSketch();
+	}
+	
+	
+	
+	public void draw()
+	{
+		super.draw();
+		
+		background(255);
+		
+		//blue1.setStroke(5,0, 10.0, 15.0);
+		
+		/*
+		for(int i = 0; i < lines.size(); i++)
+		{
+			Line l = lines.get(i);
+			stroke(0);
+			l.
+			
+		}
+		*/
+
+		
+	}
+	
+
+}

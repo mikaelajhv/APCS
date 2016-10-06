@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+
+import mjhv.shapes.Line;
+import processing.core.PApplet;
+
+public class DrawSurface extends PApplet{
+	
+	private ArrayList<Line> lines;
+	private Line red1, red2;
+	
+	public DrawSurface()
+	{
+		lines.add(new Line(1, 225, 499, 225));
+		lines.add(new Line(225, 1, 225, 499)); 
+		
+		runSketch();
+	}
+	
+	
+	
+	public void draw()
+	{
+		background(255);
+		
+
+		
+	}
+	
+
+}

@@ -1,0 +1,33 @@
+import mjhv.shapes.Circle;
+import mjhv.shapes.Rectangle;
+import processing.core.PApplet;
+
+public class DrawSurface extends PApplet {
+	
+	private Circle c1;
+	private Rectangle r;
+	
+	public DrawSurface()
+	{
+		c1 = new Circle((double)width/2, (double)height/2, 5);
+		
+		runSketch();
+	}
+	
+	public void setup()
+	{
+		
+	}
+	
+	public void draw()
+	{
+		background(255);
+		
+		c1.draw(this);
+		
+		
+	}
+	
+	
+
+}

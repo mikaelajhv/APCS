@@ -1,0 +1,64 @@
+import java.util.ArrayList;
+
+import mjhv.shapes.Circle;
+import mjhv.shapes.Rectangle;
+import processing.core.PApplet;
+
+public class DrawSurface extends PApplet {
+	
+	private double center;
+	private Rectangle square;
+	//private Circle c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16;
+	private ArrayList<Circle> circles;
+	
+	public DrawSurface()
+	{
+		center = 250;
+		
+		//drawing circles in order of outermost to innermost 
+		circles = new ArrayList<Circle>();
+		
+		circles.add(new Circle(center, center, 450));
+		circles.add(new Circle(center, center, 420));
+		circles.add(new Circle(center, center, 390));
+		circles.add(new Circle(center, center, 360));
+		circles.add(new Circle(center, center, 330));
+		circles.add(new Circle(center, center, 300));
+		circles.add(new Circle(center, center, 270));
+		circles.add(new Circle(center, center, 240));
+		circles.add(new Circle(center, center, 210));
+		circles.add(new Circle(center, center, 180));
+		circles.add(new Circle(center, center, 150));
+		circles.add(new Circle(center, center, 120));
+		circles.add(new Circle(center, center, 90));
+		circles.add(new Circle(center, center, 60));
+		circles.add(new Circle(center, center, 30));
+		circles.add(new Circle(center, center, 5));
+		
+		
+		runSketch();
+	}
+	
+	public void setup()
+	{
+		
+	}
+	
+	public void draw()
+	{
+		background(255);
+		strokeWeight(10);
+		
+		//draws Circles
+		for(int i = 0; i < circles.size(); i++)
+		{
+			Circle c = circles.get(i);
+			c.draw(this);
+		}
+		
+	
+	}
+	
+	
+
+}

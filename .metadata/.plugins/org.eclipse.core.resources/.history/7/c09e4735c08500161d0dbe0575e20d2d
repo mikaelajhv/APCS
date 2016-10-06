@@ -1,0 +1,132 @@
+package mjhv.shapes;
+
+import processing.core.PApplet;
+
+/**
+ * This class represents a double precision Rectangle 
+ * 
+ * @author mvalenciano825
+ * @version 9/15/2016
+ */
+public class Rectangle {
+
+	private float width, height, xCoord, yCoord; 
+	
+	//Constructors
+	
+	/**Creates a default instance of a Rectangle object with all dimensions
+	 * set to zero
+	*/  
+	public Rectangle()
+	{
+		width = 0;
+		height = 0;
+		xCoord = 0;
+		yCoord = 0;
+	}
+	
+	/** Creates a new instance of a Rectangle object with the left and right
+	 * edges of the rectangle at x and x + width. The top and bottom edges
+	 * are at y and y + height.
+	 * 
+	*/ 
+	public Rectangle(double x, double y, double width, double height)
+	{
+		this.width = (float)width;
+		this.height = (float)height;
+		
+		xCoord = (float)x;
+		yCoord = (float)y;
+	}
+	
+	
+	//Methods 
+	/** Calculates and returns the perimeter of the rectangle
+	 * 
+	 * @return rectangle's perimeter
+	 */
+	public double getPerimeter()
+	{
+		double perimeter = (this.width * 2) + (this.height * 2);
+		return perimeter;
+	}
+	
+	/**
+	 * This method calculates and returns the rectangle's area
+	 * 
+	 * @return rectangle's area
+	 */
+	// Calculates and returns the area of the rectangle
+	public double getArea()
+	{
+		double area = this.width * this.height;
+		return area;
+	}
+	
+	/**
+	 * Determines whether the point (x,y) is contained inside this rectangle,
+	 * returns true if point is on a rectangle edge or inside the rectangle
+	 * and returns false if point is outside the rectangle 
+	 * 
+	 *  @return true if the point is inside the rectangle or false if the point is outside 
+	 */
+	public boolean isPointInside(double x, double y)
+	{
+		if ((float)x >= this.xCoord && (float)y >= this.yCoord)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	
+	/** Draws a new instance of a Rectangle object with 
+	 * the left and right edges of the rectangle at x and x + width. The top and bottom edges
+	 * are at y and y + height. 
+	 * 
+	 * @param marker PApplet to be used in order to draw the rectangle 
+	 */
+	public void draw (PApplet marker)
+	{
+		marker.rect(xCoord, yCoord, width, height);
+	}
+	
+	
+	
+	/**
+	 * This method checks to see if the rectangle object is also a square
+	 * 
+	 * @return true if boolean if rectangle is also a square or false if rectangle is not also a square 
+	 */
+	public boolean isSquare()
+	{
+		if(this.height == this.width)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * This method returns the length of the rectangle's diagonal
+	 * 
+	 * @return the integer length of the diagonal
+	 */
+	public double diagLength()
+	{
+		double aSq = Math.pow(this.height, 2);
+		double bSq = Math.pow(this.width, 2);
+		double hypotenuse = Math.sqrt(aSq + bSq);
+		
+		return hypotenuse;
+	} 
+	
+	
+	
+}

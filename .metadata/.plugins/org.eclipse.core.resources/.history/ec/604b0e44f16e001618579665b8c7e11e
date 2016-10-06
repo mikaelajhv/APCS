@@ -1,0 +1,24 @@
+
+public class Lines extends PApplet{
+
+	public Lines(double x1, double y1, double x2, double y2)
+	{
+		
+	}
+	
+	public void setPoint(double x2, double y2)
+	{
+		
+	}
+	
+	public void draw(DrawSurface drawer)
+	{
+		
+	}
+	
+	public boolean intersects(Line other)
+	{
+		
+	}
+	
+}

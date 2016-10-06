@@ -1,0 +1,27 @@
+
+public class Line {
+	// Constructs a line from (x1, y1) to (x2, y2)
+	public Line(double x1, double y1, double x2, double y2)
+	{
+		
+	}
+
+	// Sets this line’s second point (x2, y2) to a new coordinate
+	public void setPoint2(double x2, double y2)
+	{
+		
+	}
+
+	// Draws this line using the PApplet passed as an argument
+	public void draw(DrawingSurface drawer)
+	{
+		
+	}
+
+	// Returns true if this line segment and the segment other intersect each other. Returns false if they do not intersect.
+	public boolean intersects(Line other)
+	{
+		
+	}
+
+}

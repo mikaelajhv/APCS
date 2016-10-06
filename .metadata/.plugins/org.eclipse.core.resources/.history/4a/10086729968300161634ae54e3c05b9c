@@ -1,0 +1,23 @@
+import processing.core.PApplet;
+
+
+public class DrawSurface extends PApplet {
+	
+	public DrawSurface()
+	{
+		
+	}
+	
+	public void setup()
+	{
+		
+	}
+	
+	public void draw()
+	{
+		
+	}
+	
+	
+
+}

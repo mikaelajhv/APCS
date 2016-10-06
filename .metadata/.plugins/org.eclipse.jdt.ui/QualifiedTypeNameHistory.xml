@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.awt.Dimension"/>
+<fullyQualifiedTypeName name="processing.core.PVector"/>
+<fullyQualifiedTypeName name="java.awt.geom.Point2D"/>
+<fullyQualifiedTypeName name="java.awt.geom.Line2D"/>
+<fullyQualifiedTypeName name="java.awt.geom.Line2D.Double"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="shapes.Rectangle"/>
+<fullyQualifiedTypeName name="shapes.Circle"/>
+<fullyQualifiedTypeName name="rectangleTesters.DrawSurface"/>
+<fullyQualifiedTypeName name="processing.awt.PSurfaceAWT"/>
+<fullyQualifiedTypeName name="mjhv.shapes.Circle"/>
+<fullyQualifiedTypeName name="mjhv.shapes.Rectangle"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="mjhv.rectangleTesters.Shapes"/>
+<fullyQualifiedTypeName name="processing.core.PApplet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="mjhv.shapes.Line"/>
+<fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,72 @@
+package mjhv.rectangleTesters;
+
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+
+import processing.awt.PSurfaceAWT;
+import processing.core.PApplet;
+
+
+public class Shapes {
+	
+	protected double x, y;
+	private boolean hasFill;
+	private Color fill, outline;
+	private float strokeWeight;
+	private double width, height, scaleFactor;
+	
+	public Shapes(int x, int y)
+	{
+		this.x = x;
+		this.y =y;
+		hasFill = true;
+		fill = fill.white;
+		outline = outline.black;
+		strokeWeight = 1;
+		width = 5;
+		height = 5;
+		scaleFactor = 1;
+	}
+	
+	
+	public void move(int xCoord, int yCoord)
+	{
+		this.x = xCoord;
+		this.y = yCoord;
+	}
+	
+	public double calcPerimeter(int width, int height)
+	{
+		this.width = width;
+		this.height = height;
+		
+		return 0;
+	}
+	
+	public void draw(PApplet drawer)
+	{
+		
+	}
+	
+	
+	
+	
+	
+	public static void main(String[] args)
+	{
+		DrawSurface drawing = new DrawSurface();
+		
+		PSurfaceAWT surf = (PSurfaceAWT) drawing.getSurface();
+		PSurfaceAWT.SmoothCanvas canvas = (PSurfaceAWT.SmoothCanvas) surf.getNative();
+		JFrame window = (JFrame)canvas.getFrame();
+		
+		window.setSize(600, 500);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setResizable(true);
+		window.setVisible(true);
+	
+	}
+	
+}

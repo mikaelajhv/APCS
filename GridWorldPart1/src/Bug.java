@@ -28,6 +28,9 @@ import java.awt.Color;
  */
 public class Bug extends Actor
 {
+	
+	private Color original;
+	
     /**
      * Constructs a red bug.
      */
@@ -43,6 +46,7 @@ public class Bug extends Actor
     public Bug(Color bugColor)
     {
         setColor(bugColor);
+        original = bugColor;
     }
 
     /**
