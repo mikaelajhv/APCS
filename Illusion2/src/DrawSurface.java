@@ -8,7 +8,7 @@ public class DrawSurface extends PApplet{
 	
 	public DrawSurface()
 	{	
-		l1 = new Line(1, 70, 499, 160);
+		l1 = new Line(1, 200, 499, 160);
 		l2 = new Line(1, 205, 499, 165);
 		l3 = new Line(1, 210, 499, 180);
 		l4 = new Line(1, 215, 499, 195);
