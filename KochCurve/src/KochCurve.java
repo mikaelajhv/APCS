@@ -14,17 +14,16 @@ public class KochCurve {
 	// fields = initial length
 	//local variables = as it changes
 	
-	private float length = 200;
+	private float length;
 	private int level, x, y;
 
     public KochCurve(int level, float length)
     {
     	// TO DO
-    	level = this.level;
-    	length = this.length;
-    	x = 200;
+    	this.level = level;
+    	this.length = length;
+    	x = 100;
     	y = 200;
-    	
     	/*
     	angle = 0;
     	x = 40;
@@ -62,41 +61,27 @@ public class KochCurve {
     	  Turn left 60 degrees
     	  Draw a k-1 level Koch curve with segments 1/3 the current length
     	 	*/
-    	/*
-    	if(level == 0)
-    	{
-    		marker.drawLineTo(x + length, y + length);
-    	}
-    	*/
-    	
-    	if(level < 1)
+    
+    	if(lev == 0) //base case
     	{
     		marker.drawForward(length);
-    		System.out.println("here," + "length: " + length + " and level: " + level);
-    		//drawKochCurve(marker, length, level);
     	}
     
     	else
     	{	
-    		marker.move(x + length/3, y);
-    		
-    		drawKochCurve(marker, length/3, level-1);
+    		drawKochCurve(marker, length/3, lev-1);
     		marker.turn(60.0);
-    		//marker.drawForward()
-  
-    		drawKochCurve(marker, length/3, level-1);
-    		marker.turn(120.0);
+    		marker.setDirection(60.0);
     		
-    		drawKochCurve(marker, length/3, level-1);
-    		marker.turn(60.0);
+    		drawKochCurve(marker, length/3, lev-1);
     		
-    		drawKochCurve(marker, length/3, level-1);
+
+    		drawKochCurve(marker, length/3, lev-1);
     		
-    		//drawKochCurve(marker, l + 1, )
-    		//drawKochCurve(marker, l, lev + 1, ang, x, y);
+    		
+    		drawKochCurve(marker, length/3, lev-1);
     		
     	}
-    	
     }
 
 }

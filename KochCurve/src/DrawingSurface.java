@@ -49,9 +49,15 @@ public class DrawingSurface extends PApplet {
 		if (keyCode == KeyEvent.VK_UP) {
 			level++;
 			curve = new KochCurve(level,length);
+			
+			//System.out.println("up level = " + level);
+			
 		} else if (keyCode == KeyEvent.VK_DOWN) {
 			level--;
 			curve = new KochCurve(level,length);
+			
+			//System.out.println("down level = " + level);
+			
 		}
 	}
 	
