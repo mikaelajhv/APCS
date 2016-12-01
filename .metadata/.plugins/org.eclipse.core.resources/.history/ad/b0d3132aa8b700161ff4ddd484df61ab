@@ -73,7 +73,7 @@ public class KochCurve {
     		//marker.setDirection(60.0);
     		
     		drawKochCurve(marker, length/3, lev-1);
-    		marker.turn(120.0);
+    		marker.turn(-60.0);
 
     		drawKochCurve(marker, length/3, lev-1);
     		marker.turn(60.0);
