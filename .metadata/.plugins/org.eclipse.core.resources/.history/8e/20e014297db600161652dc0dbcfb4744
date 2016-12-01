@@ -1,0 +1,73 @@
+import processing.core.PApplet;
+
+
+/**
+  @(#)KochCurve.java
+
+
+  @author
+  @version
+*/
+
+public class KochCurve {
+	// TO DO
+	// fields = initial length
+	//local variables = as it changes
+	
+	private float length = 40, angle, x , y;
+	private int level;
+
+    public KochCurve(int level, float length)
+    {
+    	// TO DO
+    	
+    	level = this.level;
+    	length = this.length;
+    	angle = 0;
+    	x = 0;
+    	y = 0;
+    }
+    
+    // public draw method passes in all initial values
+    public void draw(PApplet marker)
+    {
+    	//drawKochCurve(/* TO DO */);
+    	
+    }
+
+  //base case: level 0 = line
+ // things that change while you draw the curve = parameters
+    private void drawKochCurve(PApplet marker, float l, int lev, float ang, float x, float y)
+    {
+    	// TO DO
+    	this.x = x;
+    	this.y = y;
+    	level = lev;
+    	
+    	
+    	//if level < 1 then
+    	//  Move forward length pixels --> draws a line at specified angle, w/ specified length starting at x, y
+    	
+    	if(level < 1)
+    	{
+    		marker.line(x, y, x + l, y + l);
+    	}
+    	
+    	/*
+    	else
+    	  Draw a k-1 level Koch curve with segments 1/3 the current length
+    	  Turn left 60 degrees
+    	  Draw a k-1 level Koch curve with segments 1/3 the current length
+    	  Turn right 120 degrees
+    	  Draw a k-1 level Koch curve with segments 1/3 the current length
+    	  Turn left 60 degrees
+    	  Draw a k-1 level Koch curve with segments 1/3 the current length
+    	 	*/
+    	
+    	
+    	
+    	
+    	
+    }
+
+}
