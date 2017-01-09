@@ -1,0 +1,101 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Statistics {
+
+	private int[] data;
+	private int filled;
+	
+	public Statistics(int max, String name)
+	{
+		data = new int[max];
+		ArrayReader a = new ArrayReader(name);
+		filled = a.fillArray(data);
+	}
+	
+	/*
+	public void read(String name)
+	{
+		ArrayReader a = new ArrayReader(name);
+		int filled = a.fillArray(data);
+	}
+	*/
+	
+	public double avg(int[] data)
+	{
+		double sum = 0;
+		double avg = 0;
+		
+		for(double e: data)
+		{
+			sum = sum + e;
+		}
+		//avg = sum/data.length;
+		avg = sum/filled;
+		double roundedAvg = (double)Math.round(avg * 1000d) / 1000d;
+		
+		return roundedAvg;
+	}
+	
+	public double sDev(int[] data)
+	{
+		double average = avg(data);
+		double sumDiff = 0;
+		
+		for(int i = 0; i <= filled - 1; i++)
+		{
+			double e = Math.pow((Math.abs(average - data[i])), 2);
+			sumDiff += e;
+		}
+		double stDev = Math.sqrt(sumDiff/999);
+		double roundedSDev = (double)Math.round(stDev * 100d) / 100d;
+		
+		return roundedSDev;
+	}
+	
+	public String mode(int[] data)
+	{
+		ArrayList<String> modes = new ArrayList<String>();
+		int modeCount = 0;
+		int current = 0;
+		
+		for(int i = 0; i <= filled - 1; i++) //goes through array
+		{
+			int currentCount = 0;
+			for(int j = 0; j <= filled - 1; j++) //runs the comparison between values in the array
+			{
+				if(data[i] == data[j])
+				{
+					currentCount++;
+					current = data[i];
+				}
+			}
+						
+			if(currentCount > modeCount)
+			{
+				modes.add("" + data[i]);
+				modeCount = currentCount;
+			}
+			else if(modeCount == currentCount)
+			{
+				if(modes.contains(data[i] + "") == false) //checks if value is already in ArrayList, doesn't add again if it is
+				{
+					//System.out.println(data[i] + "");
+					modes.add("" + data[i]);
+				}
+			}
+		}
+		
+		return modes.toString();
+		
+	}
+	
+	public void printSolutions()
+	{
+		System.out.println("average: " + avg(data));
+		System.out.println("standard deviation: " + sDev(data));
+		//System.out.println("mode(s): " + mode(data));
+		System.out.println("mode: " + mode(data));
+	}
+	
+}

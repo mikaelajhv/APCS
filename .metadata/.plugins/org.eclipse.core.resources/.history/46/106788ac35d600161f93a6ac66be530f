@@ -1,0 +1,13 @@
+
+public class Main {
+	
+	public static void main(String[] args)
+	{
+		Statistics s = new Statistics(1000);
+		s.read("numbers.txt");
+		s.printData();
+		s.printSolutions();
+		
+	}
+
+}

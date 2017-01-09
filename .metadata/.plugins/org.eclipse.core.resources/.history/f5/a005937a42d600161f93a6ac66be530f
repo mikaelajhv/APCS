@@ -1,0 +1,102 @@
+import java.util.Arrays;
+
+public class Statistics {
+
+	private int[] data;
+	
+	public Statistics(int max)
+	{
+		data = new int[max];
+	}
+	
+	public void read(String name)
+	{
+		ArrayReader a = new ArrayReader(name);
+		a.fillArray(data);
+		
+	}
+	
+	/*
+	public static double sum(double[] data)
+	{
+		
+	}
+	
+	/*
+	a.	Find the average of the list of numbers.
+	b.	Determine the difference of each number from the average, and square each difference.  Sum all the differences.
+	c.	Divide this sum by (the number of values - 1).
+	d.	Take the square root of the above division problem from step c.
+*/
+	
+	public static double avg(int[] data)
+	{
+		double sum = 0;
+		double avg = 0;
+		
+		for(double e: data)
+		{
+			sum = sum + e;
+		}
+		avg = sum/data.length;
+		double roundedAvg = (double)Math.round(avg * 1000d) / 1000d;
+		
+		return roundedAvg;
+	}
+	
+	public static double sDev(int[] data)
+	{
+		double average = avg(data);
+		double sumDiff = 0;
+		
+		for(int i = 0; i <= data.length - 1; i++)
+		{
+			double e = Math.pow((Math.abs(average - data[i])), 2);
+			sumDiff += e;
+		}
+		double stDev = Math.sqrt(sumDiff/999);
+		double roundedSDev = (double)Math.round(stDev * 100d) / 100d;
+		
+		return roundedSDev;
+	}
+	
+	public static double mode(int[] data)
+	{
+		int max = 0; 
+		int maxCount = 0;
+		int[] frequency; 
+		
+		for(int i = 0; i <= data.length - 1; i++) //counts frequency of a number and puts it into new array
+		{
+			int c = 0;
+			for (int fIndex = 0; fIndex <= data.length - 1; fIndex++)
+			{
+				if(data[i] == data[fIndex])
+				{
+					c++;
+				}
+			}
+			if(max < c)
+			{
+				maxCount = c;
+				max = data[i];
+			}
+		}
+		
+		for (int i = 0; i <= data.length - 1; i++)
+		{
+			
+		}
+		
+		
+		return 0;
+	}
+	
+	public void printSolutions()
+	{
+		System.out.println("average: " + avg(data));
+		System.out.println("standard deviation: " + sDev(data));
+		//System.out.println("mode(s): " + mode(data));
+	}
+	
+}

@@ -43,7 +43,6 @@ public class KochCurve {
 
     private void drawKochCurve(MemoryDrawer marker, float length, int lev)
     {
-    	
     	// TO DO
     	level = lev;
     	this.length = length;
@@ -71,15 +70,13 @@ public class KochCurve {
     		drawKochCurve(marker, length/3, lev-1);
     		marker.turn(60.0);
     		//marker.setDirection(60.0);
-    		
     		drawKochCurve(marker, length/3, lev-1);
-    		marker.turn(120.0);
+    		marker.turn(-120.0);
 
     		drawKochCurve(marker, length/3, lev-1);
     		marker.turn(60.0);
     		
     		drawKochCurve(marker, length/3, lev-1);
-    		
     	}
     }
 

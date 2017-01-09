@@ -1,0 +1,72 @@
+import java.util.Arrays;
+
+public class Statistics {
+
+	private int[] data;
+	
+	public Statistics(int max)
+	{
+		data = new int[max];
+	}
+	
+	public void read(String name)
+	{
+		ArrayReader a = new ArrayReader(name);
+		a.fillArray(data);
+		
+	}
+	
+	public void printData()
+	{
+		System.out.println(Arrays.toString(data));
+	}
+	
+	/*
+	public static double sum(double[] data)
+	{
+		
+	}
+	
+	/*
+	a.	Find the average of the list of numbers.
+	b.	Determine the difference of each number from the average, and square each difference.  Sum all the differences.
+	c.	Divide this sum by (the number of values - 1).
+	d.	Take the square root of the above division problem from step c.
+*/
+	
+	public String avg(double[] data)
+	{
+		double sum = 0;
+		double avg = 0;
+		
+		for(double e: data)
+		{
+			sum = sum + e;
+		}
+		
+		avg = sum/1000;
+		
+		return "" + avg;
+	}
+	
+	public String sdev(double[] data)
+	{
+		double average = avg(data);
+		double diffSum = 0;
+		
+		for(double e: data)
+		{
+			diffSum = average - e;
+		}
+		
+		double stDev = Math.sqrt(diffSum/999);
+		
+		return "" =stDev;
+	}
+	
+	public static double mode(double[] data)
+	{
+		return 0;
+	}
+	
+}
