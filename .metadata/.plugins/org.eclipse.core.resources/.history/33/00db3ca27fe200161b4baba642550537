@@ -1,0 +1,31 @@
+Data
+
+Functional Test:
+1 1 2 3 5 8 13 
+false
+false
+Caught exception from a bad insert (this is a good thing). Message: Bad index: 10
+Caught exception from a bad remove (this is also a good thing). Message: Bad index: 10
+1 1 2 3 5 8 13 
+false
+The test took 1 milliseconds.
+And -639176 bytes of memory.
+
+
+Efficiency Test (10,000)
+The test took 79 milliseconds.
+And -596360 bytes of memory.
+
+
+
+Efficiency Test (100,000)
+The test took 6067 milliseconds.
+And 123640 bytes of memory.
+
+
+Data with Generics
+The test took 141 milliseconds.
+And 240120 bytes of memory.
+
+Your ResizableArray contains the following: 
+Footprint{Objects=10002, References=20021, Primitives=[int x 10001]}

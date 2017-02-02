@@ -1,0 +1,107 @@
+Data
+
+Functional Test:
+1 1 2 3 5 8 13 
+false
+false
+Caught exception from a bad insert (this is a good thing). Message: Bad index: 10
+Caught exception from a bad remove (this is also a good thing). Message: Bad index: 10
+1 1 2 3 5 8 13 
+false
+The test took 1 milliseconds.
+And -639176 bytes of memory.
+
+
+Efficiency Test (10,000)
+The test took 79 milliseconds.
+And -596360 bytes of memory.
+
+
+
+Efficiency Test (100,000)
+The test took 6067 milliseconds.
+And 123640 bytes of memory.
+
+
+----------
+DATA WITH GENERICS
+
+Functional--
+1 1 2 3 5 8 13 
+false
+false
+Caught exception from a bad insert (this is a good thing). Message: Bad index: 10
+Caught exception from a bad remove (this is also a good thing). Message: Bad index: 10
+13 8 5 3 2 1 1 
+false
+The test took 1 milliseconds.
+And 216 bytes of memory.
+
+Your ResizableArray contains the following: 
+Footprint{Objects=8, References=21, Primitives=[int x 7]}
+
+Efficiency (10,000)--
+The test took 138 milliseconds.
+And 240120 bytes of memory.
+
+Your ResizableArray contains the following: 
+Footprint{Objects=10002, References=20021, Primitives=[int x 10001]}
+
+Efficiency (100,000)--
+The test took 11092 milliseconds.
+And 2910776 bytes of memory.
+
+Your ResizableArray contains the following: 
+Footprint{Objects=100003, References=327681, Primitives=[int x 100002]}
+
+----------
+DATA WITH ARRAYLIST
+
+Efficiency (100,000)---
+The test took 3614 milliseconds.
+And 2560432 bytes of memory.
+
+Your ResizableArray contains the following: 
+Footprint{Objects=100002, References=240098, Primitives=[int x 100002]}
+
+
+Prediction (100,000)
+	I predict that the run time will be 1800 milliseconds.
+	It will use same memory because it doesn't have to randomize but
+	uses same amount of data.
+	
+	The run-time doubled because the inserts/removes are at different spots. 
+	The randomized inserts/removes don't always act on the beginning of the array.
+	If false, inserts/removes are at the very beginning of the ArrayList. 
+	This is much slower because all the values have to shift.
+	
+	
+if insert/remove acts on end of ArrayList:
+	I believe the memory usage will be the same and the run time
+	will be faster, 2000 milliseconds (you don't have to shift anything when removing
+	or inserting at the end)
+
+	***always access array list at the end rather than beginning
+	
+actual results (starting from end):
+The test took 18 milliseconds.
+And 2560432 bytes of memory.
+
+Your ResizableArray contains the following: 
+Footprint{Objects=100002, References=240098, Primitives=[int x 100002]}
+
+It used the same amount of memory. The only thing that has changed is where
+in the array list the value is coming from. It was drastically faster when 
+accessing at the end because the values in the list don't have to shift when
+you insert/remove.
+
+
+
+
+
+
+
+
+
+
+

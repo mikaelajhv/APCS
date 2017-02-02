@@ -1,0 +1,63 @@
+import java.awt.geom.*;  // for Point2D.Double
+import java.util.ArrayList;      // for ArrayList
+import processing.core.PApplet;	// for Processing
+
+public class IrregularPolygon {
+   private ArrayList <Point2D.Double> myPolygon;
+    
+   // constructors
+   public IrregularPolygon() 
+   {   
+	   myPolygon = new ArrayList<Point2D.Double>();
+   }
+   
+   // public methods
+   public void add(Point2D.Double aPoint) 
+   {
+	   myPolygon.add(aPoint);
+   }
+   
+   /*
+   public int getX(Point2D.Double point)
+   {
+	   int x = (int)point.x;
+	   return x;
+   }
+   
+   public int getY(Point2D.Double point)
+   {
+	   int y = (int)point.y;
+	   return y;
+   }
+   */
+
+   public void draw(PApplet marker) 
+   {
+	   for(int i = 0; i < myPolygon.size()-1; i++)
+	   {
+		   float x1 = (float)myPolygon.get(i).x;
+		   float y1 = (float)myPolygon.get(i).y;
+		   float x2 = (float)myPolygon.get(i+1).x;
+		   float y2 = (float)myPolygon.get(i+1).y;
+
+		   
+		   //Point2D.Double point = myPolygon.get(i);
+		   //Point2D.Double point2 = myPolygon.get(i+1);
+		   //marker.line((float)point.x, (float)point.y, (float)point2.x, (float)point2.y);
+		   marker.line(x1, y1, x2, y2);
+	   }
+   }
+
+   public double perimeter() 
+   {
+	   
+	   
+	   return 0;
+   }
+
+   public double area() 
+   {
+	   
+	   return 0;
+   }
+}
