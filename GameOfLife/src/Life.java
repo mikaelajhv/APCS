@@ -8,7 +8,7 @@ import java.util.Scanner;
 	Represents a Game Of Life grid.
 
 	Coded by: Mikaela Valenciano
-	Modified on: January 31, 2017
+	Modified on: February 1, 2017
 
 */
 
@@ -29,6 +29,26 @@ public class Life {
 		board = readData(filename);
 	}
 
+	public int getAliveNeighbors(int row, int col)
+	{
+		int alive = 0;
+		
+		for(int x = row-1 ; x < row+1; x++)
+		{
+			for(int y = col-1; y < col+1; y++)
+			{
+				if(x >= 0 && y >= 0 && x <= board.length && y <= board.length) //checks if not beyond array edge
+				{
+					if((row != x && col != y) && board[x][y] == true)
+					{
+						alive++;
+					}
+				}
+			}
+		}
+		
+		return alive;
+	}
 	
 	// Runs a single turn of the Game Of Life
 	public void step() {
@@ -41,11 +61,25 @@ public class Life {
 	 * set cell to alive if dead and should be alive
 	 */
 		//count diagonal neighbors too...
-		for(int i = 0; i < board.length; i++)
+		
+		int aliveNeighbors = 0;
+		
+		for(int row = 0; row < board.length; row++)
 		{
-			for(int j = 0; j < board.length; j++)
+			
+			for(int col = 0; col < board[0].length; col++)
 			{
-				if(board[i])
+				aliveNeighbors = getAliveNeighbors(row, col);
+				
+				if(aliveNeighbors < 2 || aliveNeighbors > 3)
+				{
+					board[row][col] = false;
+				}
+				else if(aliveNeighbors == 3)
+				{
+					board[row][col] = true;
+				}
+				
 			}
 		}
 	
@@ -53,16 +87,6 @@ public class Life {
 
 	// Runs n turns of the Game Of Life
 	public void step(int n) {
-		for(int i = 0; i < board.length; i++)
-		{
-			for(int j = 0; j < board.length; j++)
-			{
-				if(board[i][j-1] == true)
-				{
-					
-				}
-			}
-		}
 		
 	}
 

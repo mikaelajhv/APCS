@@ -5,6 +5,8 @@ public class Tester {
 		Life petri = new Life("life tester.txt");
 		System.out.println(petri);
 		
+		Life petri2 = new Life("life100.txt");
+		System.out.println(petri2);
 
 	}
 
