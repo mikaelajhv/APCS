@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+
+public class Tester {
+
+	public static void main(String[] args) {
+
+		FileIO reader = new FileIO();
+		
+		String movieFilePath = "ml-latest-small" + FileIO.fileSeparator + "movies.csv";
+		ArrayList<String> movieStringData = reader.readFile(movieFilePath);
+		ArrayList<Movie> movieData = new ArrayList<Movie>();
+		
+		for(int i = 1; i < movieStringData.size(); i++)
+		{
+			Movie m = NetflixTranslator.stringToMovie(movieStringData.get(i));
+			movieData.add(m);
+		}
+		System.out.println(movieData.toString());
+		
+		
+		String linkFilePath = "ml-latest-small" + FileIO.fileSeparator + "links.csv";
+		ArrayList<String> linkStringData = reader.readFile(linkFilePath);
+		ArrayList<Movie> linkData = new ArrayList<Movie>();
+		for(int i = 1; i < linkStringData.size(); i++) 
+		{
+			Movie link = NetflixTranslator.stringToLink(linkStringData.get(i));
+			linkData.add(link);
+		}
+		
+		
+		String ratingFilePath = "ml-latest-small" + FileIO.fileSeparator + "ratings.csv";
+		ArrayList<String> ratingStringData = reader.readFile(ratingFilePath);
+		ArrayList<Rating> ratingData = new ArrayList<Rating>();
+		
+		for(int i = 1; i < ratingStringData.size(); i++)
+		{
+			Rating r = NetflixTranslator.stringToRating(ratingStringData.get(i));
+			ratingData.add(r);
+		}
+		System.out.println(ratingData);
+		
+		
+		
+
+		
+	}
+
+}

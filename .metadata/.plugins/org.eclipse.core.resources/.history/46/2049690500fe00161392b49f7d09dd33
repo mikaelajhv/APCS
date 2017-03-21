@@ -1,0 +1,17 @@
+
+public class NetflixTranslator {
+	
+	public static Movie stringToMovie(String line)
+	{
+		//Look through the line, extract each piece of data
+		//convert data to appropriate types
+		//pass into the constructor
+		
+		for(int i)
+		
+		//Movie m = new Movie(???);
+		//return m;
+	}
+	
+
+}

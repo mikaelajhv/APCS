@@ -1,0 +1,20 @@
+
+public class Link {
+	
+	private String id, imdb, tmdb;
+	
+	
+	public Link(String movie, String imdb, String tmdb)
+	{
+		id = movie;
+		this.imdb = imdb; 
+		this.tmdb = tmdb;
+	}
+	
+	public String toString()
+	{
+		String out = "" + id + imdb + tmdb;
+		return out;
+	}
+
+}

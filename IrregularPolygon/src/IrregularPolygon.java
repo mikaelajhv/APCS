@@ -21,16 +21,18 @@ public class IrregularPolygon {
 
    public void draw(PApplet marker) 
    {
-	   for(int i = 0; i < myPolygon.size()-1; i++)
+	   if(myPolygon.size() > 2)
 	   {
-		   marker.line((float)myPolygon.get(i).x, (float)myPolygon.get(i).y, 
-				   (float)myPolygon.get(i+1).x, (float)myPolygon.get(i+1).y);
-		   if(myPolygon.size() > 2)
+		   for(int i = 0; i < myPolygon.size()-1; i++)
 		   {
-			   marker.line((float)myPolygon.get(i+1).x, (float)myPolygon.get(i+1).y, 
-					   (float)myPolygon.get(0).x, (float)myPolygon.get(0).y);
-		   }
+			   marker.line((float)myPolygon.get(i).x, (float)myPolygon.get(i).y, 
+					   (float)myPolygon.get(i+1).x, (float)myPolygon.get(i+1).y);
+		   } 
+		 marker.line((float)myPolygon.get(0).x, (float)myPolygon.get(0).y, 
+		   (float)myPolygon.get(myPolygon.size()-1).x, (float)myPolygon.get(myPolygon.size()-1).y);
 	   }
+	   
+	   
    }
 
    public double perimeter() 
@@ -100,7 +102,10 @@ public class IrregularPolygon {
 	   }
    }
    
-   
+   public void move()
+   {
+	   
+   }
    
    
 }

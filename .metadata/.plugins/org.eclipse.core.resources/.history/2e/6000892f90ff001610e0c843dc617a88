@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+
+public class Movie {
+	
+	// FIELDS
+	private String title;
+	private String[] genres;
+	private int id, imdb, tmdb;
+	
+	
+	public Movie(int ID, String title, String[] genres)
+	{
+		this.title = title;
+		this.genres = genres;
+		id = ID;
+	}
+	
+	public Movie(int ID, int imdb, int tmbd)
+	{
+		id = ID;
+		this.imdb = imdb;
+		this.tmdb = tmdb;
+	}
+	
+	// METHODS
+	
+	//returns movie's information in String form
+	public String toString() 
+	{
+		String movie = "" + id + ", " + title + ", " + genres;
+		return movie;
+	}
+	
+	public String linkToString()
+	{
+		String link = "" + id + ", " + imdb + ", " + tmdb;
+		return link;
+	}
+
+	public int getID()
+	{
+		return id;
+	}
+	
+	public int getImdb()
+	{
+		return imdb;
+	}
+	
+	public int getTmdb()
+	{
+		return tmdb;
+	}
+
+	/*
+	//takes in a User's ID and checks to see if the movies are the same movie
+	public boolean same(String ID)
+	{
+		
+	}
+	
+	//takes in a rating (from 0.0 - 5.0 in increments of 0.5) 
+	//and returns a new averaged Rating of the movie
+	public Rating rate(double rating)
+	{
+		
+	}
+	*/
+
+}

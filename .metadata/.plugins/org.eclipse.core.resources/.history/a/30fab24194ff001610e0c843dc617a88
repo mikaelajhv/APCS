@@ -1,0 +1,102 @@
+import java.util.ArrayList;
+
+public class NetflixTranslator {
+	
+	//Look through the line, extract each piece of data
+			//convert data to appropriate types
+			//pass into the constructor
+			
+			
+	//extracts each piece of data in the line by commas, checks for quotes
+	
+	public static ArrayList<String> getPieces(String line)
+	{
+		boolean isQuote = false;
+		int beginning = 0;
+		char here = ' ';
+		ArrayList<String> parts = new ArrayList<String>();
+		
+		for(int i = 1; i < line.length(); i++)
+		{
+			here = line.charAt(i);
+			
+			if(here == '"')
+			{
+				isQuote = true;
+			}
+			
+			else if(!isQuote && here == ',')
+			{
+				parts.add(line.substring(beginning, i));
+				beginning++;
+			}
+		}
+		
+		return parts;
+	}
+	
+	public static ArrayList<String> getCommaPieces(String line)
+	{
+		int beginning = 0;
+		char here = ' ';
+		ArrayList<String> parts = new ArrayList<String>();
+		
+		for(int i = 0; i < line.length(); i++)
+		{
+			here = line.charAt(i);
+			
+			parts.add(line.substring(beginning, i));
+			beginning++;
+		}
+		
+		return parts;
+	}
+	
+	public static Movie stringToMovie(String line)
+	{	
+		ArrayList<String> parts = getPieces(line);
+		int id = Integer.parseInt(parts.get(0));
+		String genres = parts.get(2);
+		Movie m = new Movie(id, parts.get(1), genres);
+		
+		return m;
+	}
+	public static Movie stringToLink(String line)
+	{
+		ArrayList<String> parts = getCommaPieces(line);
+		int id = Integer.parseInt(parts.get(0));
+		int imdb = Integer.parseInt(parts.get(1));
+		int tmdb = Integer.parseInt(parts.get(2));
+		Movie l = new Movie(id, imdb, tmdb);
+				
+		return l;
+		
+	}
+	
+	public static Rating stringToRating(String line)
+	{
+		ArrayList<String> parts = getCommaPieces(line);
+		int user = Integer.parseInt(parts.get(0));
+		int movie = Integer.parseInt(parts.get(1));
+		int rating = Integer.parseInt(parts.get(2));
+		long time = Integer.parseInt(parts.get(3));
+		Rating r = new Rating(user, movie, rating, time);
+		
+		return r;
+	}
+	
+	/*
+	public static Tag stringToTag(String line)
+	{
+		
+	}
+*/
+
+	// HERE WE NEED
+	// METHODS FOR TRANSLATING
+	// RATINGS
+	// TAGS
+	// AND LINKS
+	
+
+}

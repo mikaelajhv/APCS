@@ -1,0 +1,28 @@
+
+public class User {
+	
+	// FIELDS
+	private int id;
+	private int age;
+	
+	public User()
+	{
+		
+	}
+	
+	/*
+	// METHODS
+	
+	//returns User info in string format
+	public String toString()
+	{
+		
+	}
+	
+	//checks to see if 2 Users are the same
+	public boolean sameUser(int ID)
+	{
+		
+	}
+	*/
+}

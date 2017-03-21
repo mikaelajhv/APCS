@@ -1,0 +1,82 @@
+import java.util.ArrayList;
+
+public class Movie {
+	
+	// FIELDS
+	private double length;
+	private String title;
+	private int releaseYear, id;
+	private Rating stars;
+	private ArrayList<String> actors;
+	
+	/*
+	public Movie 
+	{
+		
+	}
+	
+	// METHODS
+	
+	//returns movie's information in String form
+	public String toString() 
+	{
+
+	}
+	
+	//returns length of movie in minutes
+	public double getLength() 
+	{
+		
+	}
+	
+	//returns name of movie
+	public String getTitle() 
+	{
+		
+	}
+	
+	//returns director's name
+	public String getDirector() 
+	{
+		
+	}
+	
+	//returns movie's release year
+	public int getYear() 
+	{
+		
+	}
+	
+	//returns movie's release year
+	public int getID()
+	{
+		
+	}
+	
+	//returns movie's average rating
+	public double getRating() 
+	{
+		
+	}
+	
+	//adds actors to ArrayList of the main cast of movie
+	public void addActors() 
+	{
+		
+	}
+	
+	//takes in a User's ID and checks to see if the movies are the same movie
+	public boolean same(int ID)
+	{
+		
+	}
+	
+	//takes in a rating (from 0.0 - 5.0 in increments of 0.5) 
+	//and returns a new averaged Rating of the movie
+	public Rating rate(double rating)
+	{
+		
+	}
+	*/
+
+}

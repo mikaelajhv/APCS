@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;squeeze.txt&apos; to &apos;data&apos;&#x0D;&#x0A;- Original project: &apos;Squeeze&apos;&#x0D;&#x0A;- Destination element: &apos;data&apos;&#x0D;&#x0A;- Original element: &apos;squeeze.txt&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" element1="squeeze.txt" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1487279077654" target="data" units="0" version="1.0"/>
+</session>

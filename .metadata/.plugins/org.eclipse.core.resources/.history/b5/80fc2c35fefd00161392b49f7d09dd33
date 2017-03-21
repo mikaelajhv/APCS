@@ -1,0 +1,37 @@
+public class Movie {
+	
+	// FIELDS
+	private String title;
+	private int releaseYear, id;
+	private Rating stars;
+	
+	
+	public Movie()
+	{
+		
+	}
+	
+	// METHODS
+	
+	//returns movie's information in String form
+	public String toString() 
+	{
+
+	}
+
+	
+	//takes in a User's ID and checks to see if the movies are the same movie
+	public boolean same(int ID)
+	{
+		
+	}
+	
+	//takes in a rating (from 0.0 - 5.0 in increments of 0.5) 
+	//and returns a new averaged Rating of the movie
+	public Rating rate(double rating)
+	{
+		
+	}
+	*/
+
+}

@@ -1,0 +1,22 @@
+
+public class Tag {
+
+	private String message;
+	
+	public Tag()
+	{
+		
+	}
+	
+	//changes the tag 
+	public void changeMessage()
+	{
+		
+	}
+	
+	//returns the tag
+	public String getTag()
+	{
+		
+	}
+}

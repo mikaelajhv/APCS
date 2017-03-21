@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class NetflixTranslatorBugs {
+
+	
+	private static ArrayList<String> getLinePieces(String line) {
+		ArrayList<String> pieces = new ArrayList<String>();
+		boolean quoted = false;
+		int start = 0;
+		for (int i = 0; i < line.length(); i++) {
+			char thisChar = line.charAt(i);
+			if (thisChar == '"') {
+				quoted = true;
+			} else if (thisChar == ',' && !quoted) {
+				pieces.add(line.substring(start,i));
+				start = i+1;
+			}
+		}
+		pieces.add(line.substring(start));
+		return pieces;
+	}
+	
+	
+	public static Movie stringToMovie(String line) {
+		ArrayList<String> pieces = getLinePieces(line);  // Get all the sections of the line separated by commas (but not in quotes)
+		
+		int id = Integer.parseInt(pieces.get(0));  // ID is the first piece of data
+		
+		String[] genrePieces = pieces.get(2).split("|");  // Split the genres by the | symbol (so each genre is in a separate index of the array)
+		
+		Movie m = new Movie(id, pieces.get(1), genrePieces);
+		return m;
+	}
+
+
+	// HERE WE NEED
+	// METHODS FOR TRANSLATING
+	// RATINGS
+	// TAGS
+	// AND LINKS
+	
+	
+}

@@ -33,7 +33,7 @@ public class Life {
 	{
 		int alive = 0;
 		
-		for(int x = row-1 ; x < row+1; x++)
+		for(int x = row-1; x < row+1; x++)
 		{
 			for(int y = col-1; y < col+1; y++)
 			{
@@ -63,21 +63,22 @@ public class Life {
 		//count diagonal neighbors too...
 		
 		int aliveNeighbors = 0;
+		boolean[][] alive = new boolean[][];
 		
 		for(int row = 0; row < board.length; row++)
 		{
-			
 			for(int col = 0; col < board[0].length; col++)
 			{
 				aliveNeighbors = getAliveNeighbors(row, col);
 				
 				if(aliveNeighbors < 2 || aliveNeighbors > 3)
 				{
-					board[row][col] = false;
+					System.out.println("here");
+					alive[row][col] = false;
 				}
 				else if(aliveNeighbors == 3)
 				{
-					board[row][col] = true;
+					alive[row][col] = true;
 				}
 				
 			}

@@ -1,0 +1,40 @@
+
+public class Rating {
+	
+	// FIELDS
+	private User user;
+	private Movie movie;
+	private ArrayList<Double> ratings;
+	private long timeStamp;
+	
+	public Rating()
+	{
+		
+	}
+	
+	// METHODS
+	
+	//returns the Rating as a String
+	public String toString()
+	{
+		
+	}
+	
+	//method takes in a new rating for a movie 
+	//and adds it to ArrayList of current ratings
+	public void add(double stars, Movie movie)
+	{
+		
+	}
+	
+	//takes in the time stamp, user, and movie and 
+	//returns the rating made
+	public double getRating(long time, User u, Movie m)
+	{
+		
+	}
+	
+	
+	
+
+}

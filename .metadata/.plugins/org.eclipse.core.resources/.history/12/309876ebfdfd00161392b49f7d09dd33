@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+
+public class Tester {
+
+	public static void main(String[] args) {
+
+		FileIO reader = new FileIO();
+		
+		String movieFilePath = "ml-latest-small" + FileIO.fileSeparator + "movies.csv";
+		
+		
+		ArrayList<String> movieStringData = reader.readFile(movieFilePath);
+		
+		System.out.println(movieStringData);
+		
+	}
+
+}

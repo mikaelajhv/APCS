@@ -1,0 +1,26 @@
+
+public class Genre {
+	
+	// FIELDS
+	private ArrayList<String> genres;
+	
+	public Genre()
+	{
+		
+	}
+	
+	// METHODS
+	
+	//returns genre(s) in string format
+	public String toString()
+	{
+		
+	}
+	
+	//adds a genre to the movie's listed genres
+	public void addGenre()
+	{
+		
+	}
+
+}

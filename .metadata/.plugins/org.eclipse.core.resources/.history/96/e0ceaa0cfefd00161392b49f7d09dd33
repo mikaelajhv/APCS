@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Tester {
+
+	public static void main(String[] args) {
+
+		FileIO reader = new FileIO();
+		
+		String movieFilePath = "ml-latest-small" + FileIO.fileSeparator + "movies.csv";
+		
+		ArrayList<String> movieStringData = reader.readFile(movieFilePath);
+		ArrayList<Movie> movieData = new ArrayList<Movie>();
+		
+		/*
+		for(int i = 1; i < movieStringData.size(); i++)
+		{
+			Movie m = NetflixTranslator.stringToMovie(movieStringData.get(i));
+			movieData.add(m);
+		}
+		*/
+		System.out.println(movieStringData);
+		
+	}
+
+}

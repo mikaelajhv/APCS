@@ -1,0 +1,97 @@
+import java.util.ArrayList;
+
+
+public class NetFlixPredictor {
+
+
+	// Add fields to represent your database.
+	private ArrayList<Movie> movieData;
+	private ArrayList<Movie> userData;
+	
+	private ArrayList<Tag> tagData;
+	private ArrayList<Rating> ratingData;
+	private ArrayList<Link> linkData;
+	
+
+	/**
+	 * 
+	 * Use the file names to read all data into some local structures. 
+	 * 
+	 * @param movieFilePath The full path to the movies database.
+	 * @param ratingFilePath The full path to the ratings database.
+	 * @param tagFilePath The full path to the tags database.
+	 * @param linkFilePath The full path to the links database.
+	 */
+	
+	//copy all code in tester and paste in this constructor
+	public NetFlixPredictor(String movieFilePath, String ratingFilePath, String tagFilePath, String linkFilePath) {
+		//delete all hardcoded paths (use args)
+		//initialize fields 
+		
+		FileIO reader = new FileIO();
+		
+		//test Movies
+		
+		ArrayList<String> movieStringData = reader.readFile(movieFilePath);
+		movieData = new ArrayList<Movie>();
+		
+		for(int i = 1; i < movieStringData.size(); i++)
+		{
+			Movie m = NetflixTranslator.stringToMovie(movieStringData.get(i));
+			movieData.add(m);
+		}
+		System.out.println(movieData.toString());
+		
+		//test Ratings
+				ArrayList<String> ratingStringData = reader.readFile(ratingFilePath);
+				ratingData = new ArrayList<Rating>();
+				
+				for(int i = 1; i < ratingStringData.size(); i++)
+				{
+					Rating r = NetflixTranslator.stringToRating(ratingStringData.get(i));
+					ratingData.add(r);
+				}
+				System.out.println(ratingData);
+				
+		//test Links
+		ArrayList<String> linkStringData = reader.readFile(linkFilePath);
+		linkData = new ArrayList<Movie>();
+		for(int i = 1; i < linkStringData.size(); i++) 
+		{
+			Movie link = NetflixTranslator.stringToLink(linkStringData.get(i));
+			linkData.add(link);
+		}
+		
+	
+		
+		
+		
+
+	}
+		
+	/**
+	 * If userNumber has rated movieNumber, return the rating. Otherwise, return -1.
+	 * 
+	 * @param userNumber The ID of the user.
+	 * @param movieNumber The ID of the movie.
+	 * @return The rating that userNumber gave movieNumber, or -1 if the user does not exist in the database, the movie does not exist, or the movie has not been rated by this user.
+	 */
+	public double getRating(long userID, long movieID) {
+
+		return -1;
+	}
+	
+	/**
+	 * If userNumber has rated movieNumber, return the rating. Otherwise, use other available data to guess what this user would rate the movie.
+	 * 
+	 * @param userNumber The ID of the user.
+	 * @param movieNumber The ID of the movie.
+	 * @return The rating that userNumber gave movieNumber, or the best guess if the movie has not been rated by this user.
+	 * @pre A user with id userID and a movie with id movieID exist in the database.
+	 */
+	public double guessRating(long userID, long movieID) {
+
+		return 0;
+	}
+	
+}
